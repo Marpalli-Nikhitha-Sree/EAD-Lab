@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  <style>
+    body {
+      display:flex;justify-content:center;align-items:center;
+      height:100vh;background:#f3f4f6;font-family:Arial
+    }
+    .calc {
+      background:#fff;padding:20px;border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.2)
+    }
+    #display {
+      width:100%;height:50px;font-size:22px;text-align:right;
+      margin-bottom:15px;padding:6px;border:1px solid #ccc;border-radius:6px
+    }
+    .buttons {
+      display:grid;grid-template-columns:repeat(4,70px);gap:10px
+    }
+    input[type=button] {
+      height:55px;font-size:20px;border:none;border-radius:8px;
+      cursor:pointer;transition:0.2s
+    }
+    input[value="0"],input[value="1"],input[value="2"],
+    input[value="3"],input[value="4"],input[value="5"],
+    input[value="6"],input[value="7"],input[value="8"],
+    input[value="9"],input[value="."] {
+      background:#dbeafe
+    }
+    input[value="0"]:hover,input[value="1"]:hover,input[value="2"]:hover,
+    input[value="3"]:hover,input[value="4"]:hover,input[value="5"]:hover,
+    input[value="6"]:hover,input[value="7"]:hover,input[value="8"]:hover,
+    input[value="9"]:hover,input[value="."]:hover {
+      background:#bfdbfe
+    }
+    input[value="+"],input[value="-"],input[value="*"],input[value="/"] {
+      background:#fde68a
+    }
+    input[value="+"]:hover,input[value="-"]:hover,
+    input[value="*"]:hover,input[value="/"]:hover {
+      background:#fcd34d
+    }
+    input[value="="] {
+      background:#34d399;color:#fff
+    }
+    input[value="="]:hover {background:#10b981}
+    input[value="C"] {
+      background:#f87171;color:#fff
+    }
+    input[value="C"]:hover {background:#ef4444}
+  </style>
+</head>
+<body>
+  <div class="calc">
+    <input type="text" id="display" disabled>
+    <div class="buttons">
+      <input type="button" value="C">
+      <input type="button" value="/">
+      <input type="button" value="*">
+      <input type="button" value="-">
+      <input type="button" value="7">
+      <input type="button" value="8">
+      <input type="button" value="9">
+      <input type="button" value="+">
+      <input type="button" value="4">
+      <input type="button" value="5">
+      <input type="button" value="6">
+      <input type="button" value="=">
+      <input type="button" value="1">
+      <input type="button" value="2">
+      <input type="button" value="3">
+      <input type="button" value="0">
+      <input type="button" value=".">
+    </div>
+  </div>
+  <script>
+    const display=document.getElementById("display");
+    document.querySelectorAll("input[type=button]").forEach(btn=>{
+      btn.addEventListener("click",()=>{
+        const val=btn.value;
+        if(val==="C") display.value="";
+        else if(val==="="){
+          try{display.value=eval(display.value)}catch{display.value="Error"}
+        } else {
+          display.value+=val;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
