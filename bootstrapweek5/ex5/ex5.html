@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Records Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link 
+    href="css/bootstrap.css" 
+    rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container py-4">
+  <h2 class="mb-4 text-center">Student Records Dashboard</h2>
+
+  <form class="mb-3 d-flex">
+    <input type="text" class="form-control me-2" placeholder="Filter by name">
+    <button class="btn btn-primary" type="button">Filter</button>
+  </form>
+
+  <div class="alert alert-warning alert-dismissible fade show d-none" role="alert">
+    No student records found.
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Course</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>101</td>
+          <td>Alice</td>
+          <td>Computer Science</td>
+          <td>A</td>
+        </tr>
+        <tr>
+          <td>102</td>
+          <td>Bob</td>
+          <td>Mathematics</td>
+          <td>B+</td>
+        </tr>
+        <tr>
+          <td>103</td>
+          <td>Charlie</td>
+          <td>Physics</td>
+          <td>A-</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="js/bootstrap.bundle.js"></script>
+</body>
+</html>
