@@ -1,12 +1,17 @@
 import React from 'react';
-import Counter from './Counter';
+import './App.css';
+import Props from './Components/Props';
 
 function App() {
-  return (
-    <div>
-      <Counter />
-    </div>
-  );
+
+	return (
+  <div>
+
+    <Props> </Props>
+      
+  </div>
+		
+	);
 }
 
 export default App;
